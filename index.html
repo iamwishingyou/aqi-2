@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dearest Aqi’s Birthday Wish! 🎀🐾</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styling */
+        body {
+            margin: 0;
+            font-family: 'Patrick Hand', cursive;
+            background: linear-gradient(to bottom, #ffd1e6, #e6f3ff, #f2e8ff);
+            color: #ff66b2;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating Decorations */
+        body::before {
+            content: '🎈';
+            position: absolute;
+            font-size: 2.5rem;
+            color: #ff99d6;
+            animation: float 5s infinite ease-in-out;
+            top: 5%;
+            left: 10%;
+        }
+
+        body::after {
+            content: '🌟';
+            position: absolute;
+            font-size: 2rem;
+            color: #ffb3e6;
+            animation: float 4s infinite ease-in-out reverse;
+            bottom: 10%;
+            right: 15%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(5deg); }
+            50% { transform: translateY(-30px) rotate(-5deg); }
+        }
+
+        /* Header */
+        h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #ff3399;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px #fff0f5, 5px 5px #cce6ff;
+            opacity: 0;
+            transform: translateY(-60px) rotate(-8deg);
+            animation: bounceIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: translateY(-60px) rotate(-8deg); }
+            60% { transform: translateY(15px) rotate(8deg); }
+            100% { opacity: 1; transform: translateY(0) rotate(0); }
+        }
+
+        /* Gallery Styling */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            background: rgba(255, 245, 250, 0.6);
+            border-radius: 20px;
+            border: 2px dotted #ffccff;
+            opacity: 0;
+            animation: fadeInGallery 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeInGallery {
+            to { opacity: 1; }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 4px solid #ffb3e6;
+            background: #fff5f9;
+            box-shadow: 0 6px 12px rgba(255, 153, 204, 0.4);
+            transition: transform 0.5s, box-shadow 0.5s;
+            opacity: 0;
+            transform: scale(0.6) rotate(-15deg);
+            animation: popIn 1.2s ease-in-out forwards;
+        }
+
+        .gallery-item:nth-child(odd) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(even) { animation-delay: 0.7s; }
+
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 25px rgba(255, 153, 204, 0.6);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Wish Letter Section */
+        .letter {
+            margin-top: 40px;
+            padding: 30px;
+            background: #fff5f9;
+            border: 4px double #ff99d6;
+            border-radius: 20px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 20px rgba(255, 204, 255, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: scale(0.7) rotate(-5deg);
+            animation: popLetter 1.8s ease-in-out forwards;
+            animation-delay: 1.5s;
+        }
+
+        .letter::before {
+            content: '💌';
+            position: absolute;
+            font-size: 2rem;
+            top: -20px;
+            left: 20px;
+            color: #ff66b2;
+        }
+
+        .letter::after {
+            content: '🌷';
+            position: absolute;
+            font-size: 2rem;
+            bottom: -20px;
+            right: 20px;
+            color: #ffb3e6;
+        }
+
+        @keyframes popLetter {
+            to { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        .letter p {
+            font-size: 1.5rem;
+            color: #ff4da6;
+            margin: 20px 0;
+            line-height: 1.9;
+            text-shadow: 1px 1px #fff0f5;
+        }
+
+        .letter p span {
+            color: #ff1a8c;
+            font-size: 1.9rem;
+            font-weight: bold;
+            text-decoration: underline wavy #cce6ff;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #ff80bf;
+            text-shadow: 1px 1px #e6f3ff;
+            opacity: 0;
+            animation: fadeInFooter 2.5s ease-in-out forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeInFooter {
+            to { opacity: 1; }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .letter p { font-size: 1.3rem; }
+            .gallery { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+            .letter p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Dearest Aqi’s Birthday Wish! 🎂🌸</h1>
+
+    <div class="gallery">
+        <div class="gallery-item"><img src="img/1.jpg" alt="Aqi’s Happy Moment 1"></div>
+        <div class="gallery-item"><img src="img/2.jpg" alt="Aqi’s Happy Moment 2"></div>
+        <div class="gallery-item"><img src="img/3.jpg" alt="Aqi’s Happy Moment 3"></div>
+        <div class="gallery-item"><img src="img/4.jpg" alt="Aqi’s Happy Moment 4"></div>
+        <div class="gallery-item"><img src="img/5.jpg" alt="Aqi’s Happy Moment 5"></div>
+        <div class="gallery-item"><img src="img/6.jpg" alt="Aqi’s Happy Moment 6"></div>
+        <div class="gallery-item"><img src="img/7.jpg" alt="Aqi’s Happy Moment 7"></div>
+        <div class="gallery-item"><img src="img/8.jpg" alt="Aqi’s Happy Moment 8"></div>
+        <div class="gallery-item"><img src="img/9.jpg" alt="Aqi’s Happy Moment 9"></div>
+        <div class="gallery-item"><img src="img/10.jpg" alt="Aqi’s Happy Moment 10"></div>
+    </div>
+
+    <div class="letter">
+        <p>💖 My Sweetest Aqi, <span>Happy Birthday</span>! 🎉</p>
+        <p>You’re my little sunshine, and I wish you a day full of <span>sparkly dreams</span> and cuddly hugs! 🌈🐾</p>
+        <p>May every moment be as cute as a bunny and as yummy as a big strawberry cake! 🍓✨</p>
+        <p>Here’s to twirling in happiness, giggling with friends, and feeling oh-so-loved! 🎀💕</p>
+        <p>You’re the <span>most special star</span> in my sky, Aqi! 🌟</p>
+    </div>
+
+    <div class="footer">
+        Wrapped in love & tied with a big pink bow for Aqi! 🎀💌
+    </div>
+</body>
+</html>
